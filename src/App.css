@@ -1,0 +1,36 @@
+
+/* в гриде 12fr */
+.app-wrapper { 
+  display: grid;
+  max-width: 1200px;
+  margin: 0 auto;
+ 
+ grid-template-areas:
+"header header header"
+"nav content content";
+ grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
+}
+
+.header {
+  grid-area: header; /* псевдоним */
+  background-color: rosybrown;
+}
+
+.header img {
+  width: 60px;
+}
+
+.sidebar {
+  grid-area: nav; /* псевдоним */
+  background-color: rosybrown;
+}
+.content {
+  grid-area: content; /* псевдоним */
+  background-color: blanchedalmond;
+}
+
+.content img {
+  width: 160px;
+}
