@@ -1,0 +1,11 @@
+.dialogsItem {
+
+}
+
+.dialogsItem.active {
+  font-weight: bold; 
+}
+
+.messages {
+
+}
