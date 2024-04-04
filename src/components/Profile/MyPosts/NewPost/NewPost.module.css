@@ -1,0 +1,23 @@
+.content {
+  margin-bottom: 30px;
+}
+
+.textarea textarea {
+  resize: none;
+  background:rgb(246, 243, 240);
+  border: none;
+  width: 300px;
+  padding: 10px;
+  outline: none;
+  margin-bottom: 5px;
+}
+
+button {
+  height: 30px;
+  width: 100px;
+  color: white;
+  background-color: #2a4057;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer
+}

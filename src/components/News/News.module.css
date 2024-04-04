@@ -1,0 +1,15 @@
+.header {
+    grid-area: header; /* псевдоним */
+    background-color: #f6cbc0;
+    margin-bottom: 10px;
+  }
+
+  .header a {
+    cursor: pointer;
+  }
+  
+  .header img {
+    margin-left: 15px;
+    margin-top: 10px; 
+    width: 30px;
+  }

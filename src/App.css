@@ -1,4 +1,3 @@
-
 /* в гриде 12fr */
 .app-wrapper { 
   display: grid;
@@ -13,24 +12,8 @@
   grid-gap: 10px;
 }
 
-.header {
-  grid-area: header; /* псевдоним */
-  background-color: rosybrown;
-}
-
-.header img {
-  width: 60px;
-}
-
-.sidebar {
-  grid-area: nav; /* псевдоним */
-  background-color: rosybrown;
-}
-.content {
+.app-wrapper-content {
   grid-area: content; /* псевдоним */
-  background-color: blanchedalmond;
-}
-
-.content img {
-  width: 160px;
+  margin-left: 15px;
+  height: 100%;
 }
