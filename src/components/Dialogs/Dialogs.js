@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Dialogs.module.css";
 import Dialog from "./Dialog/Dialog";
 import Message from "./Message/Message";
+import NewMessage from "./NewMessage/NewMessage";
 
 const Dialogs = () => {
   const dialogsData = [
@@ -26,10 +27,11 @@ const Dialogs = () => {
         ))}
       </div>
       <div className={styles.messages}>
-        Messages
+        <h3>Messages</h3>
         {messages.map((message) => (
           <Message message={message.message} id={message.id} />
         ))}
+        <NewMessage />
       </div>
     </div>
   );

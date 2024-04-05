@@ -10,9 +10,16 @@
 }
 
 .message {
-    margin-left: 15px;
     width: 300px;
     border: 1px solid rgba(100, 109, 118, 0.315);
     border-radius: 10px;
     padding: 10px;
+    resize: none;
+    outline: none;
+    margin-bottom: 7px;
+}
+
+.newMessage {
+    display: block;
+    margin-left: 15px;
 }
