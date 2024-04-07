@@ -8,7 +8,7 @@ import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
 import Music from "./components/Music/Music";
 
-const App = ({ state, addPost, changeNewPostText }) => {
+const App = ({ state, dispatch }) => {
   return (
     <div className="app-wrapper">
       <Header />
@@ -19,9 +19,7 @@ const App = ({ state, addPost, changeNewPostText }) => {
             path="/profile"
             element=<Profile
               posts={state.profilePage.posts}
-              addPost={addPost}
-              newPostText={state.profilePage.newPostText}
-              changeNewPostText={changeNewPostText}
+              dispatch={dispatch}
             />
           />
           <Route path="/dialogs/*" element=<Dialogs /> />

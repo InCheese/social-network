@@ -4,18 +4,20 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import { state } from "./state";
-import { addPost } from "./state";
-import { rerenderEntireTree } from "./render";
+import { store } from "./state";
 
-// root.render(
-//   <BrowserRouter>
-//     <App state={state} addPost={addPost} />
-//   </BrowserRouter>
-// );
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-rerenderEntireTree(state);
+let foo = () => {
+  root.render(
+    <BrowserRouter>
+      <App state={store.getState()} dispatch={store.dispatch.bind(store)} />
+    </BrowserRouter>
+  );
+};
+foo();
 
+store.subscribe(foo);
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
