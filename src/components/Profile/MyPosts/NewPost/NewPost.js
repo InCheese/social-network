@@ -1,16 +1,20 @@
 import React from "react";
 import styles from "./NewPost.module.css";
+import {
+  changeNewPostTextActionCreator,
+  addPostActionCreator,
+} from "../../../../state";
 
 const NewPost = (props) => {
   const addPost = () => {
-    props.dispatch({ type: "ADD_POST" });
-    props.dispatch({ type: "CHANGE_NEW_POST_TEXT", newPostText: "" });
+    props.dispatch(addPostActionCreator());
+    props.dispatch(changeNewPostTextActionCreator(""));
   };
   const newPostElement = React.createRef(); //создаем ссылку, в textarea привязываем
 
   const handlerOnChange = () => {
     let text = newPostElement.current.value;
-    props.dispatch({ type: "CHANGE_NEW_POST_TEXT", newPostText: text });
+    props.dispatch(changeNewPostTextActionCreator(text));
   };
 
   return (

@@ -32,4 +32,12 @@ SPA - single page application, точка входа - полупустой inde
   onClick = () => {alert("тест")}
   )
 
-5.
+5. Action - объект, у которого обязательно есть поле type
+
+6. Принцип single responsibility
+
+7. Action creator - помогает не ошибиться в создании action-а
+
+8. Меняем ссылку с помощью NavLink - ссылка без перезагрузки
+
+9.
