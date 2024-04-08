@@ -3,16 +3,17 @@ import styles from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import NewPost from "./NewPost/NewPost";
 
-const MyPosts = ({ posts, newPostText, dispatch, store }) => {
+const MyPosts = ({ posts, newPostText, onChange, addPost }) => {
   return (
     <div className={styles.posts}>
       <div>
         <h2>My posts</h2>
         <NewPost
-          dispatch={store.dispatch}
-          newPostText={store.getState().profileReducer.newPostText}
+          addPost={addPost}
+          onChange={onChange}
+          newPostText={newPostText}
         />
-        {store.getState().profileReducer.posts.map((post) => (
+        {posts.map((post) => (
           <Post post={post} />
         ))}
       </div>
