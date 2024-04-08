@@ -31,7 +31,7 @@ const NewMessage = ({ store }) => {
             ref={newMessageRef}
             placeholder="Write message..."
             onChange={handleChange}
-            value={store.getState().dialogsPage.newMessageText}
+            value={store.getState().dialogsReducer.newMessageText}
           ></textarea>
         </div>
         <button onClick={handleClick}>Sent</button>

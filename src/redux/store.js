@@ -2,7 +2,7 @@ import dialogsReducer from "./dialogs-reducer";
 import profileReducer from "./profile-reducer";
 import sidebarReducer from "./sidebar-reducer";
 
-export let store = {
+export const store = {
   _state: {
     profilePage: {
       posts: [
