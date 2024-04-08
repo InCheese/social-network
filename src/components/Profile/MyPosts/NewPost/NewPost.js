@@ -3,7 +3,7 @@ import styles from "./NewPost.module.css";
 import {
   changeNewPostTextActionCreator,
   addPostActionCreator,
-} from "../../../../state";
+} from "../../../../redux/profile-reducer";
 
 const NewPost = (props) => {
   const addPost = () => {

@@ -6,7 +6,6 @@ import NewMessage from "./NewMessage/NewMessage";
 
 const Dialogs = ({ store }) => {
   let ms = store.getState().dialogsPage.messages;
-  console.log(ms);
   return (
     <div className={styles.dialogsAndMessages}>
       <div className={styles.dialogsItems}>
