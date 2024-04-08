@@ -15,13 +15,7 @@ const App = ({ state, dispatch, store }) => {
       <Navbar />
       <div className="app-wrapper-content">
         <Routes>
-          <Route
-            path="/profile"
-            element=<Profile
-              posts={state.profilePage.posts}
-              dispatch={dispatch}
-            />
-          />
+          <Route path="/profile" element=<Profile store={store} /> />
           <Route path="/dialogs/*" element=<Dialogs store={store} /> />
           <Route path="/news" element=<News /> />
           <Route path="/music" element=<Music /> />
