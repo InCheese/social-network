@@ -1,22 +1,7 @@
 import React from "react";
 import styles from "./NewMessage.module.css";
-import {
-  sendMessageActionCreator,
-  changeNewMessageTextActionCreator,
-} from "./../../../redux/dialogs-reducer";
 
-const NewMessage = ({ store }) => {
-  const newMessageRef = React.createRef();
-
-  const handleClick = () => {
-    store.dispatch(sendMessageActionCreator());
-    store.dispatch(changeNewMessageTextActionCreator(""));
-  };
-
-  const handleChange = (event) => {
-    let messageText = event.target.value;
-    store.dispatch(changeNewMessageTextActionCreator(messageText));
-  };
+const NewMessage = ({ onChange, onClick, newMessageText }) => {
   return (
     <div className={styles.content}>
       <div className={styles.profile}>
@@ -28,13 +13,12 @@ const NewMessage = ({ store }) => {
         <div>
           <textarea
             className={styles.message}
-            ref={newMessageRef}
             placeholder="Write message..."
-            onChange={handleChange}
-            value={store.getState().dialogsReducer.newMessageText}
+            onChange={onChange}
+            value={newMessageText}
           ></textarea>
         </div>
-        <button onClick={handleClick}>Sent</button>
+        <button onClick={onClick}>Sent</button>
       </div>
     </div>
   );
