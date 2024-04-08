@@ -1,12 +1,21 @@
 import React from "react";
 import styles from "./NewMessage.module.css";
+import {
+  sendMessageActionCreator,
+  changeNewMessageTextActionCreator,
+} from "./../../../state";
 
-const NewMessage = (props) => {
+const NewMessage = ({ store }) => {
   const newMessageRef = React.createRef();
 
   const handleClick = () => {
-    const message = newMessageRef.current.value;
-    alert(message);
+    store.dispatch(sendMessageActionCreator());
+    store.dispatch(changeNewMessageTextActionCreator(""));
+  };
+
+  const handleChange = (event) => {
+    let messageText = event.target.value;
+    store.dispatch(changeNewMessageTextActionCreator(messageText));
   };
   return (
     <div className={styles.content}>
@@ -21,6 +30,8 @@ const NewMessage = (props) => {
             className={styles.message}
             ref={newMessageRef}
             placeholder="Write message..."
+            onChange={handleChange}
+            value={store.getState().dialogsPage.newMessageText}
           ></textarea>
         </div>
         <button onClick={handleClick}>Sent</button>
