@@ -1,45 +1,58 @@
-import avatar from "../assets/avatar.jpeg";
-
 const SHOW_MORE_USERS = "SHOW_MORE_USERS";
 const FOLLOW_USER = "FOLLOW_USER";
 const UNFOLLOW_USER = "UNFOLLOW_USER";
 const SET_USERS = "SET_USERS";
 
+// const initialState = {
+//   users: [
+//     {
+//       id: 1,
+//       photos: {
+//         small: null,
+//         large: null,
+//       },
+//       followed: true,
+//       name: "Inna",
+//       status: "online",
+//       location: { city: "Moscow", country: "Russia" },
+//     },
+//     {
+//       id: 2,
+//       photos: {
+//         small: null,
+//         large: null,
+//       },
+//       followed: false,
+//       name: "Vasya",
+//       status: "online",
+//       location: { city: "Moscow", country: "Russia" },
+//     },
+//     {
+//       id: 3,
+//       photos: {
+//         small: null,
+//         large: null,
+//       },
+//       followed: true,
+//       name: "Andrew",
+//       status: "online",
+//       location: { city: "Moscow", country: "Russia" },
+//     },
+//     {
+//       id: 4,
+//       photos: {
+//         small: null,
+//         large: null,
+//       },
+//       followed: false,
+//       name: "Nika",
+//       status: "online",
+//       location: { city: "Moscow", country: "Russia" },
+//     },
+//   ],
+// };
 const initialState = {
-  users: [
-    {
-      id: 1,
-      photoUrl: avatar,
-      followed: true,
-      fullName: "Inna",
-      status: "online",
-      location: { city: "Moscow", country: "Russia" },
-    },
-    {
-      id: 2,
-      photoUrl: avatar,
-      followed: false,
-      fullName: "Vasya",
-      status: "online",
-      location: { city: "Moscow", country: "Russia" },
-    },
-    {
-      id: 3,
-      photoUrl: avatar,
-      followed: true,
-      fullName: "Andrew",
-      status: "online",
-      location: { city: "Moscow", country: "Russia" },
-    },
-    {
-      id: 4,
-      photoUrl: avatar,
-      followed: false,
-      fullName: "Nika",
-      status: "online",
-      location: { city: "Moscow", country: "Russia" },
-    },
-  ],
+  users: [],
 };
 
 export const followAC = (userId) => ({
@@ -95,7 +108,7 @@ const usersReducer = (state = initialState, action) => {
       return stateCopy;
     }
     case SET_USERS:
-      return { ...state, users: [...state.users, action.users] };
+      return { ...state, users: [...state.users, ...action.users] };
     default:
       return state;
   }
