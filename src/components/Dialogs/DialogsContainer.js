@@ -9,6 +9,7 @@ let mapStateToProps = (state) => {
   return {
     dialogsData: state.dialogsReducer.dialogsData,
     messages: state.dialogsReducer.messages,
+    newMessageText: state.dialogsReducer.newMessageText,
   };
 };
 

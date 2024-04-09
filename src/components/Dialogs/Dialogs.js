@@ -24,13 +24,13 @@ const Dialogs = ({
     <div className={styles.dialogsAndMessages}>
       <div className={styles.dialogsItems}>
         {dialogsData.map((data) => (
-          <Dialog name={data.name} id={data.id} />
+          <Dialog name={data.name} id={data.id} key={data.id} />
         ))}
       </div>
       <div className={styles.messages}>
         <h3>Messages</h3>
         {messages.map((m) => (
-          <Message message={m.message} id={m.id} />
+          <Message message={m.message} id={m.id} key={m.id} />
         ))}
         <NewMessage
           onChange={handleChange}
