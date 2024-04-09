@@ -107,3 +107,9 @@ https://social-network.samuraijs.com/api/1.0/users?page=2&count=2
     По факту не меняют url (endpoint)
 
 33. URI-параметры - немного другое, там меняется url
+
+34. url-адрес - новый источник истины (первый источник истины - redux, а именно store)
+
+Как достать параметр из url? (например, user/12 - нужно получить 12)
+
+withRouter -
