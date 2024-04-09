@@ -3,12 +3,12 @@ import React from "react";
 import axios from "axios";
 import Users from "./Users";
 import {
-  followAC,
-  unfollowAC,
-  setUsersAC,
-  setCurrentPageAC,
-  setTotalCountAC,
-  toggleIsFetchingAC,
+  followUser,
+  unfollowUser,
+  setUsers,
+  setCurrentPage,
+  setTotalCount,
+  toggleIsFetching,
 } from "../../redux/users-reducer";
 import Preloader from "../common/Preloader/Preloader";
 
@@ -60,10 +60,10 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, {
-  followUser: followAC,
-  unfollowUser: unfollowAC,
-  setUsers: setUsersAC,
-  setCurrentPage: setCurrentPageAC,
-  setTotalCount: setTotalCountAC,
-  toggleIsFetching: toggleIsFetchingAC,
+  followUser,
+  unfollowUser,
+  setUsers,
+  setCurrentPage,
+  setTotalCount,
+  toggleIsFetching,
 })(UsersContainer);

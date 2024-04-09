@@ -14,12 +14,12 @@ const initialState = {
   isFetching: false,
 };
 
-export const followAC = (userId) => ({
+export const followUser = (userId) => ({
   type: FOLLOW_USER,
   userId: userId,
 });
 
-export const unfollowAC = (userId) => ({
+export const unfollowUser = (userId) => ({
   type: UNFOLLOW_USER,
   userId,
 });
@@ -29,22 +29,22 @@ export const showMoreUsersAC = () => ({
 });
 
 //будут приходить с сервера
-export const setUsersAC = (users) => ({
+export const setUsers = (users) => ({
   type: SET_USERS,
   users,
 });
 
-export const setCurrentPageAC = (pageNumber) => ({
+export const setCurrentPage = (pageNumber) => ({
   type: SET_CURRENT_PAGE,
   pageNumber,
 });
 
-export const setTotalCountAC = (totalCount) => ({
+export const setTotalCount = (totalCount) => ({
   type: SET_TOTAL_COUNT,
   totalCount,
 });
 
-export const toggleIsFetchingAC = (isFetching) => ({
+export const toggleIsFetching = (isFetching) => ({
   type: TOGGLE_IS_FETCHING,
   isFetching,
 });
