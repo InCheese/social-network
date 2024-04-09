@@ -96,4 +96,4 @@ SPA - single page application, точка входа - полупустой inde
 Количество страниц считам из общего количества записей на количество записей на странице = totalSize/pageSize
 https://social-network.samuraijs.com/api/1.0/users?page=2&count=2
 
-29.
+29. У нас 2 контейнерых(объединила в одну контейнерную UsersContainer) и 1 презентационная компонента Users
