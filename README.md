@@ -83,4 +83,6 @@ SPA - single page application, точка входа - полупустой inde
     c. headers
     d. request
     e. status (например 200)
-    f. statusText§
+    f. statusText
+
+26. Классовые компоненты

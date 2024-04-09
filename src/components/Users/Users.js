@@ -13,10 +13,6 @@ const Users = ({ users, followUser, setUsers, unfollowUser }) => {
     }
   };
 
-  // if (users.length === 0) {
-  //   axios.get(URL).then((response) => setUsers(response.data.items));
-  // }
-
   return (
     <>
       <button onClick={getUsersFoo}>получить пользователей</button>
