@@ -5,12 +5,21 @@ import Message from "./Message/Message";
 import NewMessage from "./NewMessage/NewMessage";
 
 const Dialogs = ({
-  onChange,
-  onClick,
+  changeNewMessageText,
+  sendMessage,
   dialogsData,
   messages,
   newMessageText,
 }) => {
+  const handleClick = () => {
+    sendMessage();
+    changeNewMessageText("");
+  };
+
+  const handleChange = (event) => {
+    let messageText = event.target.value;
+    changeNewMessageText(messageText);
+  };
   return (
     <div className={styles.dialogsAndMessages}>
       <div className={styles.dialogsItems}>
@@ -24,8 +33,8 @@ const Dialogs = ({
           <Message message={m.message} id={m.id} />
         ))}
         <NewMessage
-          onChange={onChange}
-          onClick={onClick}
+          onChange={handleChange}
+          onClick={handleClick}
           newMessageText={newMessageText}
         />
       </div>
