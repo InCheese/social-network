@@ -14,7 +14,7 @@ const MyPosts = ({ posts, newPostText, changeNewPostText, addPost }) => {
           newPostText={newPostText}
         />
         {posts.map((post) => (
-          <Post post={post} />
+          <Post post={post} key={post.id} />
         ))}
       </div>
     </div>

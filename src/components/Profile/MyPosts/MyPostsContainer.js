@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import MyPosts from "./MyPosts";
 import {
   addPostActionCreator,
