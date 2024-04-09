@@ -1,12 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import StoreContext from "../../StoreContext";
 
-const Profile = () => {
+const Profile = ({ profile }) => {
   return (
     <>
-      <ProfileInfo />
+      <ProfileInfo profile={profile} />
       <MyPostsContainer />
     </>
   );
