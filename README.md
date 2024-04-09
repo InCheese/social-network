@@ -102,3 +102,8 @@ https://social-network.samuraijs.com/api/1.0/users?page=2&count=2
 
 31. Лайфхак с mapDispatchToProps - можно передать сразу объект с actionCreator-ами, connect создаст сам функцию mapDispatchToProps с dispatch-ами. Теперь будем передавать сразу объект с actionCreator-ами, для удобства названия actionCreator и функцию, которую вызываем в компоненте совпадают.
     https://youtu.be/_LZXisuCluw?si=GqgB4oBL81jebNbA
+
+32. GET-параметры (query-параметры) - параметры в url после знака ?
+    По факту не меняют url (endpoint)
+
+33. URI-параметры - немного другое, там меняется url
