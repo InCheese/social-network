@@ -3,7 +3,6 @@ import styles from "./Users.module.css";
 import avatar from "../../assets/avatar.jpeg";
 
 const Users = (props) => {
-  console.log(props);
   const pagesCount = Math.ceil(props.totalCount / props.pageSize);
   const pageNumbers = [];
   for (let i = 1; i <= pagesCount; i++) {

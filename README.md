@@ -97,3 +97,7 @@ SPA - single page application, точка входа - полупустой inde
 https://social-network.samuraijs.com/api/1.0/users?page=2&count=2
 
 29. У нас 2 контейнерых(объединила в одну контейнерную UsersContainer) и 1 презентационная компонента Users
+
+30. В mapStateToProps берем только ту часть, которая нужна компоненте для оптимальной работы connect
+
+31. Лайфхак с mapDispatchToProps
