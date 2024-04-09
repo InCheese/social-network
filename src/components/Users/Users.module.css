@@ -1,3 +1,11 @@
+.user{
+    margin: 10px;
+    margin-bottom: 20px;
+    display: flex;
+}
+.content {
+}
+
 .photo {
     height: 70px;
     border-radius: 50%;

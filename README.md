@@ -58,4 +58,29 @@ SPA - single page application, точка входа - полупустой inde
 
 17. users: [...state.users] идентично users: state.users.map ( u => u )
 
-18.
+18. Программный сервер nginx
+
+19. Endpoint -
+    а. url-адрес
+    b. http-request type: get/post
+    c. request payload
+    d. response data
+    e. htttp codes: 404, 5XX, 3XX
+
+20. Rest API - по одному эндойнту с разными типами получаем 4 операции (CRUD)
+
+21. Fetch - нативная, низкоуровневая, нужно писать обертки
+
+22. Будем использовать axios
+
+23. Ajax-запросы
+
+24. Сервер возвращает JSON
+
+25. Структура ответа с сервера:
+    a. config
+    b. data - используем для рендера
+    c. headers
+    d. request
+    e. status (например 200)
+    f. statusText§
