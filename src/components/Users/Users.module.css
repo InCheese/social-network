@@ -3,7 +3,22 @@
     margin-bottom: 20px;
     display: flex;
 }
-.content {
+
+.users {
+    margin-top: 10px;
+}
+
+.pages {
+    padding-bottom: 10px;
+}
+
+.selectedPage { 
+    font-weight: 600;
+}
+.page {
+padding: 5px;
+margin: 5px;
+cursor: pointer
 }
 
 .photo {
