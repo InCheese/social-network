@@ -139,3 +139,5 @@ https://youtu.be/tZahQsOc9Jk?si=AMJi9VnMsD_qkEwO
 39. thunkMiddleware - промежуточный слой, который обрабатывает thunk-и
 
 40. redux-thunk - библиотека для использования thunkActionCreator в redux-store
+
+41. HOC - hight order component, на входе компонент - на выходе контейнерКомпонент

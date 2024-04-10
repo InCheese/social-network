@@ -3,6 +3,7 @@ import styles from "./Dialogs.module.css";
 import Dialog from "./Dialog/Dialog";
 import Message from "./Message/Message";
 import NewMessage from "./NewMessage/NewMessage";
+import { Navigate } from "react-router";
 
 const Dialogs = ({
   changeNewMessageText,
@@ -10,6 +11,7 @@ const Dialogs = ({
   dialogsData,
   messages,
   newMessageText,
+  isAuth,
 }) => {
   const handleClick = () => {
     sendMessage();
@@ -20,6 +22,7 @@ const Dialogs = ({
     let messageText = event.target.value;
     changeNewMessageText(messageText);
   };
+
   return (
     <div className={styles.dialogsAndMessages}>
       <div className={styles.dialogsItems}>
