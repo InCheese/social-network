@@ -98,7 +98,7 @@ https://social-network.samuraijs.com/api/1.0/users?page=2&count=2
 
 29. У нас 2 контейнерых(объединила в одну контейнерную UsersContainer) и 1 презентационная компонента Users
 
-30. В mapStateToProps берем только ту часть, которая нужна компоненте для оптимальной работы connect
+30. В mapStateToProps берем только ту часть, которая нужна компоненте для оптимальной работы connect - из библиотеки react-redux
 
 31. Лайфхак с mapDispatchToProps - можно передать сразу объект с actionCreator-ами, connect создаст сам функцию mapDispatchToProps с dispatch-ами. Теперь будем передавать сразу объект с actionCreator-ами, для удобства названия actionCreator и функцию, которую вызываем в компоненте совпадают.
     https://youtu.be/_LZXisuCluw?si=GqgB4oBL81jebNbA
@@ -128,5 +128,14 @@ withRouter - deprecated
 37. DAL - data access layer (уровень доступа к данным)
 
 UI - BLL - DAL
+https://youtu.be/tZahQsOc9Jk?si=AMJi9VnMsD_qkEwO
 
-38.
+38. Thunk- это функция, которая делает асинхронное действие и умеет диспатчить обычные экшены и ее саму можно тоже задиспатчить.
+    redux-store вызывает эту функцию и передаст ей в аргументе dispatch, мы ее просто диспатчим:
+    dispatch(addPost)
+
+    Чтобы передать аргументы в экшены, которые будут вызваны в thunk - создаем thunk-creator (аргументы передадутся за счет механизма замыкания)
+
+39. thunkMiddleware - промежуточный слой, который обрабатывает thunk-и
+
+40. redux-thunk - библиотека для использования thunkActionCreator в redux-store
