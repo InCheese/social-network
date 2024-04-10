@@ -1,21 +1,31 @@
 import React from "react";
 import styles from "./ProfileInfo.module.css";
 import Preloader from "../../common/Preloader/Preloader";
+import ProfileStatus from "./ProfileStatus";
 
-const ProfileInfo = ({ profile }) => {
+const ProfileInfo = ({
+  profile,
+  status,
+  updateUserStatus,
+  changeUserStatus,
+}) => {
   if (!profile) {
     return <Preloader />;
   }
-
   return (
     <div className={styles.profile}>
       <div className={styles.avatar}>
         <img
           src={
-            profile.photos
-              ? profile.photos.large
+            profile.photos.large
+              ? profile.photos?.large
               : "https://i.pinimg.com/236x/2d/b9/00/2db9004b5969d123191db46eb3325f4e.jpg"
           }
+        />
+        <ProfileStatus
+          status={status}
+          updateUserStatus={updateUserStatus}
+          changeUserStatus={changeUserStatus}
         />
       </div>
       <div className={styles.info}>

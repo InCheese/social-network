@@ -104,9 +104,9 @@ https://social-network.samuraijs.com/api/1.0/users?page=2&count=2
     https://youtu.be/_LZXisuCluw?si=GqgB4oBL81jebNbA
 
 32. GET-параметры (query-параметры) - параметры в url после знака ?
-    По факту не меняют url (endpoint)
+    По факту не меняют url (endpoint). Можем передавать в любой последовательности
 
-33. URI-параметры - немного другое, там меняется url
+33. URI-параметры - немного другое, там меняется url (являются частью url-а). Строгая последовательность
 
 34. url-адрес - новый источник истины (первый источник истины - redux, а именно store)
 
@@ -141,3 +141,8 @@ https://youtu.be/tZahQsOc9Jk?si=AMJi9VnMsD_qkEwO
 40. redux-thunk - библиотека для использования thunkActionCreator в redux-store
 
 41. HOC - hight order component, на входе компонент - на выходе контейнерКомпонент
+
+42. Функция compose из redux -
+    compose() () - означает, что compose() - вернул функцию и уже она затем вызывается
+
+43. Локальный стейт (useState)
