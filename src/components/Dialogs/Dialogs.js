@@ -2,25 +2,11 @@ import React from "react";
 import styles from "./Dialogs.module.css";
 import Dialog from "./Dialog/Dialog";
 import Message from "./Message/Message";
-import NewMessage from "./NewMessage/NewMessage";
-import { Navigate } from "react-router";
+import { Field, reduxForm } from "redux-form";
 
-const Dialogs = ({
-  changeNewMessageText,
-  sendMessage,
-  dialogsData,
-  messages,
-  newMessageText,
-  isAuth,
-}) => {
-  const handleClick = () => {
-    sendMessage();
-    changeNewMessageText("");
-  };
-
-  const handleChange = (event) => {
-    let messageText = event.target.value;
-    changeNewMessageText(messageText);
+const Dialogs = ({ sendMessage, dialogsData, messages, newMessageText }) => {
+  const addNewMessage = (values) => {
+    sendMessage(values.newMessageBody);
   };
 
   return (
@@ -35,14 +21,42 @@ const Dialogs = ({
         {messages.map((m) => (
           <Message message={m.message} id={m.id} key={m.id} />
         ))}
-        <NewMessage
-          onChange={handleChange}
-          onClick={handleClick}
+        <AddMessageFormRedux
+          onSubmit={addNewMessage}
           newMessageText={newMessageText}
         />
       </div>
     </div>
   );
 };
+
+const AddMessageForm = (props) => {
+  return (
+    <form onSubmit={props.handleSubmit}>
+      <div className={styles.content}>
+        <div className={styles.profile}>
+          <img src="https://i.pinimg.com/236x/2d/b9/00/2db9004b5969d123191db46eb3325f4e.jpg" />
+          <div>Имя</div>
+        </div>
+
+        <div className={styles.newMessage}>
+          <div>
+            <Field
+              component="textarea"
+              name="newMessageBody"
+              className={styles.message}
+              placeholder="Write message..."
+            />
+          </div>
+          <button>Sent</button>
+        </div>
+      </div>
+    </form>
+  );
+};
+
+const AddMessageFormRedux = reduxForm({ form: "dialogAddMessageForm" })(
+  AddMessageForm
+);
 
 export default Dialogs;
