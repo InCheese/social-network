@@ -146,3 +146,37 @@ https://youtu.be/tZahQsOc9Jk?si=AMJi9VnMsD_qkEwO
     compose() () - означает, что compose() - вернул функцию и уже она затем вызывается
 
 43. Локальный стейт (useState)
+
+44. redux-form- для работы с формами, помогает управлять жизненным потоком формочек.
+    В формах одна из основных задача - валидация
+
+(вообще библиотека устарела - на замену Formik)
+https://youtu.be/yhBYEM3VDTk?si=NjZYpyo50cp3UcDg
+
+<form></form> - лучше вынести в отдельную компоненту
+
+redux-form - предоставляет специальный HOC
+
+В редьюсер добавляем formReducer из redux-form, добавляем строго с названием form:
+
+    const reducers = combineReducers({
+        auth: authReducer,
+        form: formReducer,
+    });
+
+Функцией reduxForm (чем-то похожей на connect) мы оборачиваем нашу компоненту с формой:
+const LoginReduxForm = reduxForm({
+//a unique name for the form
+form: "login",
+})(LoginForm);
+
+В библиотеке есть специальная компонента Field,
+у нее нужно заполнить name, type.
+
+При оборачивании компонента в reduxForm возвращается колбек handleSubmit. Мы должны ему доверить обработку сабмита.
+Внутри handleSubmit
+a.выполняется e.preventDefault,
+b. собираются все данные из формы в объект formData с полями из наименований Field
+c. вызывается props.onSubmit(formData) (т.е. onSubmit определяем сами)
+
+45.
