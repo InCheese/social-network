@@ -43,7 +43,9 @@ const Users = (props) => {
               <div>
                 {user.followed ? (
                   <button
+                    disabled={props.followingfInProgress}
                     onClick={() => {
+                      props.toggleFollowingProgress(true);
                       axios
                         .delete(URL + `${user.id}`, {
                           withCredentials: true,
@@ -55,6 +57,7 @@ const Users = (props) => {
                           if (response.data.resultCode === 0) {
                             props.unfollowUser(user.id);
                           }
+                          props.toggleFollowingProgress(false);
                         });
                     }}
                   >
@@ -62,7 +65,10 @@ const Users = (props) => {
                   </button>
                 ) : (
                   <button
+                    disabled={props.followingfInProgress}
                     onClick={() => {
+                      props.toggleFollowingProgress(true);
+
                       axios
                         .post(
                           URL + `${user.id}`,
@@ -77,6 +83,7 @@ const Users = (props) => {
                         .then((response) => {
                           if (response.data.resultCode === 0) {
                             props.followUser(user.id);
+                            props.toggleFollowingProgress(false);
                           }
                         });
                     }}

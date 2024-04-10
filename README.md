@@ -128,5 +128,6 @@ withRouter - deprecated
 37. DAL - data access layer (уровень доступа к данным)
 
 UI - BLL - DAL
+https://youtu.be/tZahQsOc9Jk?si=AMJi9VnMsD_qkEwO
 
 38.
