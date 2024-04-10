@@ -1,11 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+import { withAuthRedirect } from "../../hoc/withAuthRedirect";
 import Profile from "../Profile/Profile";
-import { setUserProfile } from "../../redux/profile-reducer";
-
-const URL = "https://social-network.samuraijs.com/api/1.0/profile/";
+import { setUserProfileThunkCreator } from "../../redux/profile-reducer";
 
 export function withRouter(Children) {
   return (props) => {
@@ -18,9 +16,7 @@ class ProfileContainer extends React.Component {
   //метод жизненного цикла, монтирование компонента
   componentDidMount() {
     const userId = this.props.match.params.userId;
-    axios.get(URL + userId).then((response) => {
-      this.props.setUserProfile(response.data);
-    });
+    this.props.setUser(userId);
   }
 
   render() {
@@ -29,14 +25,17 @@ class ProfileContainer extends React.Component {
   }
 }
 
+const AuthRedirectComponent = withAuthRedirect(ProfileContainer);
+
 const mapStateToProps = (state) => {
   return {
     profile: state.profileReducer.profile,
+    isAuth: state.auth.isAuth,
   };
 };
 
-let withUrlDataProfileContainer = withRouter(ProfileContainer);
+let withUrlDataProfileContainer = withRouter(AuthRedirectComponent);
 
-export default connect(mapStateToProps, { setUserProfile })(
-  withUrlDataProfileContainer
-);
+export default connect(mapStateToProps, {
+  setUser: setUserProfileThunkCreator,
+})(withUrlDataProfileContainer);

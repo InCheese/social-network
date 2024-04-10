@@ -1,3 +1,5 @@
+import { authAPI } from "../api/api";
+
 const SET_USER_DATA = "SET_USER_DATA";
 
 const initialState = {
@@ -7,11 +9,6 @@ const initialState = {
   isFetching: false,
   isAuth: false,
 };
-
-export const setUserData = (id, login, email) => ({
-  type: SET_USER_DATA,
-  data: { id, login, email },
-});
 
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -23,4 +20,17 @@ const authReducer = (state = initialState, action) => {
   }
 };
 
+export const setUserData = (id, login, email) => ({
+  type: SET_USER_DATA,
+  data: { id, login, email },
+});
+
+export const getAuthUserDataThunkCreator = () => (dispatch) => {
+  authAPI.me().then((response) => {
+    if (response.data.resultCode === 0) {
+      const { id, login, email } = response.data.data;
+      dispatch(setUserData(id, login, email));
+    }
+  });
+};
 export default authReducer;

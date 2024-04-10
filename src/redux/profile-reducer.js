@@ -1,18 +1,8 @@
+import { usersAPI } from "../api/api";
+
 const ADD_POST = "ADD_POST";
 const CHANGE_NEW_POST_TEXT = "CHANGE_NEW_POST_TEXT";
 const SET_USER_PROFILE = "SET_USER_PROFILE";
-
-export const addPostActionCreator = () => ({ type: ADD_POST });
-
-export const changeNewPostTextActionCreator = (newPostText) => ({
-  type: CHANGE_NEW_POST_TEXT,
-  newPostText,
-});
-
-export const setUserProfile = (profile) => ({
-  type: SET_USER_PROFILE,
-  profile,
-});
 
 const initialState = {
   posts: [
@@ -50,6 +40,24 @@ const profileReducer = (state = initialState, action) => {
       return state;
     }
   }
+};
+
+export const addPostActionCreator = () => ({ type: ADD_POST });
+
+export const changeNewPostTextActionCreator = (newPostText) => ({
+  type: CHANGE_NEW_POST_TEXT,
+  newPostText,
+});
+
+export const setUserProfile = (profile) => ({
+  type: SET_USER_PROFILE,
+  profile,
+});
+
+export const setUserProfileThunkCreator = (userId) => (dispatch) => {
+  usersAPI.getProfile(userId).then((response) => {
+    dispatch(setUserProfile(response.data));
+  });
 };
 
 export default profileReducer;

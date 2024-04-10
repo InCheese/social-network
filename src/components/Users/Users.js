@@ -3,9 +3,6 @@ import axios from "axios";
 import styles from "./Users.module.css";
 import avatar from "../../assets/avatar.jpeg";
 import { NavLink } from "react-router-dom";
-import { usersAPI } from "../../api/api";
-
-const URL = "https://social-network.samuraijs.com/api/1.0/follow/";
 
 const Users = (props) => {
   const pagesCount = Math.ceil(props.totalCount / props.pageSize);
