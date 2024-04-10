@@ -17,16 +17,12 @@ export const usersAPI = {
       .get(`users?page=${currentPage}&count=${pageSize}`)
       .then((response) => response.data);
   },
-};
 
-export const followUnfollowAPI = {
-  follow(userId = 2) {
-    return instance.post(`follow/${userId}`).then((response) => response.data);
+  follow(userId) {
+    return instance.post(`/follow/${userId}`);
   },
 
-  unfollow(userId = 2) {
-    return instance
-      .delete(`follow/${userId}`)
-      .then((response) => response.data);
+  unfollow(userId) {
+    return instance.delete(`/follow/${userId}`);
   },
 };
