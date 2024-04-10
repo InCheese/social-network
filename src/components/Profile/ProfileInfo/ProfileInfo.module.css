@@ -24,3 +24,17 @@
   margin-bottom: 5px;
   font-size: 14px;
 }
+
+.status span {
+  width: 100px;
+  cursor: pointer;
+  border: 1px solid rgba(100, 109, 118, 0.315);
+}
+
+.status input {
+  border: 1px solid rgba(100, 109, 118, 0.315);
+  padding: 5px;
+  resize: none;
+  outline: none;
+  margin-bottom: 7px;
+}

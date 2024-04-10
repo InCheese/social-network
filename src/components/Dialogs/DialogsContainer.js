@@ -1,3 +1,4 @@
+import { compose } from "redux";
 import Dialogs from "./Dialogs";
 import {
   sendMessageActionCreator,
@@ -26,9 +27,7 @@ let mapDispatchToProps = (dispatch) => {
   };
 };
 
-const DialogsContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withAuthRedirect(Dialogs));
-
-export default DialogsContainer;
+export default compose(
+  connect(mapStateToProps, mapDispatchToProps),
+  withAuthRedirect
+)(Dialogs);
