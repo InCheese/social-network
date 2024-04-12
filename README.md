@@ -179,4 +179,29 @@ a.выполняется e.preventDefault,
 b. собираются все данные из формы в объект formData с полями из наименований Field
 c. вызывается props.onSubmit(formData) (т.е. onSubmit определяем сами)
 
-45.
+Вызываем из пропсов props.handleSubmit, а не props.onSubmit
+
+45. Есть валидация на форму и есть валидация на отдельную форму
+
+Валидаторы - конкретные функции, которые проверяют
+
+          <Field
+            name="newPostText"
+            component="textarea"
+            placeholder="Write your post..."
+            value={props.newPostText}
+            validate={[required]}
+          />
+
+46. Замыкание - когда функция возвращает другую функцию. И внутренная функция имеет доступ к параметрам родительской функции
+
+47. Передали свой кастомный компонент в Field
+    <Field
+    name="newPostText"
+    component={Textarea}
+    placeholder="Write your post..."
+    value={props.newPostText}
+    validate={[required, maxLength30]}
+    />
+
+В компонент Textarea в props придет meta с информацией с error

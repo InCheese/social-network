@@ -3,6 +3,7 @@ import styles from "./Dialogs.module.css";
 import Dialog from "./Dialog/Dialog";
 import Message from "./Message/Message";
 import { Field, reduxForm } from "redux-form";
+import { required, maxLength300 } from "../../utils/validators/validators";
 
 const Dialogs = ({ sendMessage, dialogsData, messages, newMessageText }) => {
   const addNewMessage = (values) => {
@@ -46,6 +47,7 @@ const AddMessageForm = (props) => {
               name="newMessageBody"
               className={styles.message}
               placeholder="Write message..."
+              validate={[required, maxLength300]}
             />
           </div>
           <button>Sent</button>
